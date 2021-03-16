@@ -41,30 +41,7 @@ class RestTestApplicationTests {
 
 	@Test
 	public void mainControllerTest() throws Exception {
-//		mvc.perform(post("/user").params("First", "05/08/1999", "MALE"));
-		User test = new User("Alex", new Date(), Gender.FEMALE);
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd"));
-		String json = mapper.writeValueAsString(test);
-		System.out.println(json);
-		mvc.perform(post("/user")
-//				.accept(MediaTypes.HAL_JSON_VALUE)
-//				.contentType(MediaTypes.HAL_JSON_VALUE)
-				.content(json)).andDo(print());
 
-//		Date date1 = new GregorianCalendar(1999, Calendar.AUGUST, 5).getTime();
-//		Date date2 = new GregorianCalendar(1999, Calendar.JANUARY, 21).getTime();
-//
-//		given(repository.findAll()).willReturn(Arrays.asList(
-//						new User("Serj", DateUtils.truncate(date1, Calendar.DATE), Gender.MALE),
-//						new User("Kate", new Date("21/01/1999"), Gender.FEMALE)));
-
-//		mvc.perform(get("/user").accept(MediaTypes.HAL_JSON_VALUE))
-//				.andDo(print())
-//				.andExpect(status().isOk())
-//				.andExpect(jsonPath("$._embedded.userList[0].name", is("Serj")))
-//				.andExpect(jsonPath("$._embedded.userList[0].birthday", is(DateUtils.truncate(date1, Calendar.DATE))))
-//				.andReturn();
 	}
 
 }
